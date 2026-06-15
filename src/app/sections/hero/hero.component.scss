@@ -1,0 +1,141 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 3rem;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(10, 132, 255, 0.18), transparent 35%),
+        #000;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.eyebrow {
+    color: #0a84ff;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    color: #f5f5f7;
+    margin: 0;
+}
+
+h1 span {
+    display: block;
+}
+
+h2 {
+    margin-top: 2rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    color: #86868b;
+    font-weight: 700;
+    max-width: 760px;
+}
+
+.description {
+    margin-top: 1.8rem;
+    max-width: 680px;
+    color: #a1a1a6;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border-radius: 999px;
+    padding: 0.85rem 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-primary-custom {
+    background: #0a84ff;
+    color: #fff;
+}
+
+.btn-outline-custom {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #f5f5f7;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero-image-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: min(380px, 80vw);
+    height: min(480px, 95vw);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 36px;
+    box-shadow:
+        0 30px 100px rgba(10, 132, 255, 0.25),
+        0 30px 80px rgba(0, 0, 0, 0.65);
+    animation: floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 5rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-image-wrap {
+        order: -1;
+    }
+
+    .profile-image {
+        width: min(300px, 75vw);
+        height: min(360px, 85vw);
+    }
+
+    h1 {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
