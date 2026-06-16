@@ -1,0 +1,147 @@
+.about-section {
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 2rem;
+    color: #f5f5f7;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(10, 132, 255, .12), transparent 28%),
+        #000;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-label {
+    color: #0a84ff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-title {
+    max-width: 1050px;
+    margin: 0;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -.05em;
+}
+
+.about-description {
+    max-width: 900px;
+    margin-top: 2rem;
+    color: #a1a1a6;
+    font-size: 1.25rem;
+    line-height: 1.85;
+}
+
+.achievement-grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.achievement-card {
+    padding: 2rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .035);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: all .3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        border-color: rgba(10, 132, 255, .45);
+        background: rgba(10, 132, 255, .06);
+    }
+
+    h3 {
+        font-size: 3rem;
+        color: #0a84ff;
+        margin: 0;
+    }
+
+    p {
+        margin: .5rem 0 0;
+        color: #a1a1a6;
+    }
+}
+
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+
+    span {
+        padding: .85rem 1.25rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .035);
+        border: 1px solid rgba(255, 255, 255, .08);
+        color: #d1d1d6;
+        transition: .3s ease;
+
+        &:hover {
+            color: #0a84ff;
+            border-color: rgba(10, 132, 255, .45);
+            transform: translateY(-3px);
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .about-section {
+        padding-block: 9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 6rem 1.25rem;
+    }
+
+    .about-title {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+    }
+
+    .about-description {
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+
+    .achievement-card {
+        padding: 1.5rem;
+
+        h3 {
+            font-size: 2.4rem;
+        }
+    }
+
+    .expertise-tags {
+        gap: .7rem;
+
+        span {
+            padding: .65rem .95rem;
+            font-size: .85rem;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .achievement-card {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+}

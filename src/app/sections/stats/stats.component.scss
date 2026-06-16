@@ -12,33 +12,57 @@
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid rgba(255, 255, 255, .08);
-    border-radius: 24px;
     padding: 2rem;
     text-align: center;
-    transition: .3s;
-}
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: .3s ease;
 
-.stat-card:hover {
-    transform: translateY(-8px);
-    border-color: #0a84ff;
-}
-
-.stat-card h2 {
-    font-size: 3rem;
-    color: #0a84ff;
-    margin-bottom: .5rem;
-}
-
-.stat-card p {
-    color: #86868b;
-    margin: 0;
-}
-
-@media(max-width:768px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+    &:hover {
+        transform: translateY(-8px);
+        border-color: #0a84ff;
     }
 
+    h2 {
+        font-size: 3rem;
+        color: #0a84ff;
+        margin: 0 0 .5rem;
+    }
+
+    p {
+        color: #86868b;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .stats-section {
+        padding-block: 5rem 7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+
+        h2 {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
