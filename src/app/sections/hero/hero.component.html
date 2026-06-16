@@ -1,32 +1,49 @@
-<section class="hero" id="home">
-  <div class="hero-content">
-
-    <div class="hero-text">
-      <p class="eyebrow">Hello, I'm</p>
-
-      <h1>
-        Ramkumar
-        <span>Kollimalayan</span>
-      </h1>
-
-      <h2>Building enterprise software that scales.</h2>
-
-      <p class="description">
-        Senior Full Stack Engineer with 8+ years of experience developing
-        enterprise applications using Angular, ASP.NET Core, SQL Server and Azure.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary-custom">View Projects</a>
-        <a href="../../../../assets/resume/Ramkumar_Kollimalayan_Resume.pdf" target="_blank" class="btn btn-outline-custom">
-          Download Resume
-        </a>
-      </div>
+<section class="hero" id="home" (mousemove)="onMouseMove($event)">
+    <div class="stars-container">
+        @for (star of stars; track $index) {
+        <span class="star" [style.left.%]="star.left" [style.top.%]="star.top" [style.width.px]="star.size"
+            [style.height.px]="star.size" [style.animation-delay.s]="star.delay"
+            [style.animation-duration.s]="star.duration">
+        </span>
+        }
     </div>
+    <div class="cursor-glow"></div>
+    <div class="grid-bg"></div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <p class="eyebrow">Hello, I'm</p>
+            <h1>Ramkumar<span>Kollimalayan</span></h1>
+            <div class="hero-meta">
+                <div class="hero-badge">
+                    Available for Senior Full Stack Opportunities
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/ramkumar-kollimalayan" target="_blank">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ramkumar-kollimalayan/" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="mailto:yourmail@gmail.com">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <h2>Building scalable enterprise<span class="line-break">applications for global users.</span></h2>
+            <p class="description">Senior Full Stack Engineer with 8+ years of experience developing<span
+                    class="line-break">enterprise applications using Angular, ASP.NET Core, SQL Server and Azure.</span>
+            </p>
+            <div class="tech-stack">Angular • ASP.NET Core • SQL Server • Azure</div>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary-custom">View Projects</a>
+                <a href="/assets/resume/Ramkumar_Kollimalayan_Resume.pdf" target="_blank"
+                    class="btn btn-outline-custom">Download Resume</a>
+            </div>
+        </div>
 
-    <div class="hero-image-wrap">
-      <img src="../../../../assets/images/profile.jpg" alt="Ramkumar Kollimalayan" class="profile-image">
+        <div class="hero-image-wrap">
+            <img src="/assets/images/profile.jpg" alt="Ramkumar Kollimalayan" class="profile-image">
+        </div>
+
     </div>
-
-  </div>
 </section>
