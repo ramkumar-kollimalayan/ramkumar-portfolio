@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AnalyticsService } from '../../services/analytics.service';
 
 interface Star {
   left: number;
@@ -11,23 +12,13 @@ interface Star {
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  styleUrls: ['./hero.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent {
+  @ViewChild('cursorGlow') cursorGlow?: ElementRef<HTMLElement>;
 
-  mouseX = 0;
-  mouseY = 0;
-
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-
-    const glow = document.querySelector('.cursor-glow') as HTMLElement;
-
-    if (!glow) return;
-
-    glow.style.left = `${event.clientX}px`;
-    glow.style.top = `${event.clientY}px`;
-  }
+  constructor(private analyticsService: AnalyticsService) { }
 
   stars: Star[] = Array.from({ length: 90 }, () => ({
     left: Math.random() * 100,
@@ -36,4 +27,18 @@ export class HeroComponent {
     delay: Math.random() * 5,
     duration: Math.random() * 3 + 3
   }));
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent): void {
+    const glow = this.cursorGlow?.nativeElement;
+
+    if (!glow) return;
+
+    glow.style.left = `${event.clientX}px`;
+    glow.style.top = `${event.clientY}px`;
+  }
+
+  trackEvent(eventName: string, category: string): void {
+    this.analyticsService.trackEvent(eventName, category);
+  }
 }

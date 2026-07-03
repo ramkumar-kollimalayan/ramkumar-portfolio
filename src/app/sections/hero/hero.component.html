@@ -7,7 +7,7 @@
         </span>
         }
     </div>
-    <div class="cursor-glow"></div>
+    <div #cursorGlow class="cursor-glow"></div>
     <div class="grid-bg"></div>
     <div class="hero-content">
         <div class="hero-text">
@@ -15,13 +15,13 @@
             <h1>Ramkumar<span>Kollimalayan</span></h1>
             <div class="hero-meta">
                 <div class="social-icons">
-                    <a href="https://github.com/ramkumar-kollimalayan" target="_blank">
+                    <a href="https://github.com/ramkumar-kollimalayan" target="_blank" rel="noopener" (click)="trackEvent('github_click', 'contact')">
                         <i class="bi bi-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/ramkumar-kollimalayan/" target="_blank">
+                    <a href="https://www.linkedin.com/in/ramkumar-kollimalayan/" target="_blank" rel="noopener" (click)="trackEvent('linkedin_click', 'contact')">
                         <i class="bi bi-linkedin"></i>
                     </a>
-                    <a href="mailto:ramkumar.kollimalayan@outlook.com">
+                    <a href="mailto:ramkumar.kollimalayan@outlook.com" (click)="trackEvent('email_click', 'contact')">
                         <i class="bi bi-envelope"></i>
                     </a>
                 </div>
@@ -35,13 +35,14 @@
             <div class="tech-stack">Angular • ASP.NET Core • SQL Server • Azure</div>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary-custom">View Projects</a>
-                <a href="/assets/resume/Ramkumar_Kollimalayan_Resume.pdf" target="_blank"
+                <a href="/assets/resume/Ramkumar_Kollimalayan_Resume.pdf" target="_blank" rel="noopener" (click)="trackEvent('resume_download', 'resume')"
                     class="btn btn-outline-custom">Download Resume</a>
             </div>
         </div>
 
         <div class="hero-image-wrap">
-            <img src="/assets/images/ramkumar_kollimalayan.webp" alt="Ramkumar Kollimalayan" class="profile-image" draggable="false" (dragstart)="$event.preventDefault()" (contextmenu)="$event.preventDefault()">
+            <img src="/assets/images/ramkumar_kollimalayan.webp" alt="Ramkumar Kollimalayan" class="profile-image"
+                draggable="false" (dragstart)="$event.preventDefault()" (contextmenu)="$event.preventDefault()">
         </div>
 
     </div>
